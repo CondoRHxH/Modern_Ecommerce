@@ -1,13 +1,14 @@
 export default{
-    name:'name',
-    title:'Name',
+    name:'banner',
+    title:'Banner',
+    type :'document',
     fields:[
         {
             name:'image',
             title:'Image',
             type :'image',
             option:{
-                hotspot:'true',
+                hotspot:true,
             }
         },
         {
@@ -22,7 +23,7 @@ export default{
         },
         {
             name:'desc',
-            title:'desc',
+            title:'Desc',
             type:'string',
         },
         {

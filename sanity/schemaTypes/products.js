@@ -1,3 +1,4 @@
+
 export default{
     name:'product',
     title : 'Product',
@@ -5,11 +6,12 @@ export default{
 
     fields :[
         {
-            name:'img',
-            title:'Name',
+            name:'image',
+            title:'Image',
+            type : 'array',
             of : [{type : 'image'}],
             options:{
-                hotspot:'true',
+                hotspot:true,
             }
         },
 
@@ -21,10 +23,10 @@ export default{
         {
             name:'slug',
             title:'Slug',
-            type:'Slug',
+            type:'slug',
             options:{
                 source:'name',
-                MaxLength : 90,
+                maxLength : 90,
             }
         },
         {
