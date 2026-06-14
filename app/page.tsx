@@ -3,7 +3,7 @@ import { HeroBanner } from '../components/index';
 import { client } from '../lib/client'
 
 
-const index = () => {
+const index = ({ products, banner }: { products: any; banner: any }) => {
   
   return(
     <>
@@ -15,7 +15,7 @@ const index = () => {
     </div>
     
     <div className='products-container'>
-      {['product1','product2'].map((product) => product +'  ')}
+      {products?.map((product: any) => <div key={product._id}>{product.name}</div>)}
     </div>
     
     </>
@@ -23,11 +23,15 @@ const index = () => {
 }
 
 export const FetchDataFromSanity = async() => {
-  const query = '*[type == "product"]';
+  const query = `*[_type == "products"]`
   const products = await client.fetch(query);
 
-  const bannerQuery = '*[type == "banner"]'
+  const bannerQuery = '*[_type == "banner"]'
   const banner = await client.fetch(bannerQuery);
+
+  return{
+    props : {products, banner}
+  }
 }
 
 export default index;
