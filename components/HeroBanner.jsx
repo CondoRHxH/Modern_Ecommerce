@@ -7,8 +7,8 @@ const HeroBanner = ( {heroBanner}) => {
             <div className='hero-banner-container'>
                 {console.log(heroBanner)}
                 <div>
-                    <p className='beats-solo'></p>
-                    <h3>Perfil</h3>
+                    <p className='beats-solo'>{heroBanner.desc}</p>
+                    <h3>{heroBanner.product}</h3>
                     <img src="#" alt="ProductImg" className='hero-banner-image'/>
                 </div>
                 <div>
