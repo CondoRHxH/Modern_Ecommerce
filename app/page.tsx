@@ -44,7 +44,7 @@ export default async function Home() {
 
   return (
     <div>
-      <HeroBanner heroBanner={bannerData?.[0]} />
+      <HeroBanner heroBanner={bannerData?.length && bannerData[0]} />
       
       <div className='products-heading'>
         <h3>Best Selling Products</h3>
@@ -53,7 +53,8 @@ export default async function Home() {
 
       <div className='products-container'>
         {products?.map((product: any) => (
-          <p key={product._id}>{product.name}</p>
+          <div key={product._id} >
+            {product.name}</div>
         ))}
       </div>
     </div>
