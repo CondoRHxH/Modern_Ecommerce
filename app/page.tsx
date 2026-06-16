@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroBanner } from '../components/index';
+import { FooterBanner, HeroBanner } from '../components/index';
 import { client } from '../lib/client'
 import { Product } from '../components/index';
 
@@ -54,7 +54,10 @@ export default async function Home() {
       <div className='products-container'>
         {products?.map((product: any) => <Product key={product._id} Product={product} /> ) }
       </div>
+
+      <FooterBanner footerBanner={bannerData && bannerData[0]}/>
       
     </div>
+
   );
 }
