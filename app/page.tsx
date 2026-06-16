@@ -1,7 +1,7 @@
 import React from 'react'
 import { HeroBanner } from '../components/index';
 import { client } from '../lib/client'
-
+import { Product } from '../components/index';
 
 
 // const index = ({ products, bannerData }: { products: any; bannerData: any }) => (
@@ -39,7 +39,7 @@ import { client } from '../lib/client'
 
 // export default index;
 export default async function Home() {
-  const products = await client.fetch(`*[_type == "products"]`);
+  const products = await client.fetch(`*[_type == "product"]`);
   const bannerData = await client.fetch(`*[_type == "banner"]`);
 
   return (
@@ -52,11 +52,9 @@ export default async function Home() {
       </div>
 
       <div className='products-container'>
-        {products?.map((product: any) => (
-          <div key={product._id} >
-            {product.name}</div>
-        ))}
+        {products?.map((product: any) => <Product key={product._id} Product={product} /> ) }
       </div>
+      
     </div>
   );
 }
