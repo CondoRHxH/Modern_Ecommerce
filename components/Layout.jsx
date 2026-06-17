@@ -4,17 +4,17 @@ import Footer from './Footer'
 
 import Head from 'next/head'
 
-const Layout = () => {
+const Layout = ( {children} ) => {
     return (
-        <div>
+        <div className='layout'>
             <Head>
                 <title>Ecommerce Shop</title>
             </Head>
             <header>
                 <Navbar />
             </header>
-            <main>
-
+            <main className='main-container'>
+                {children}
             </main>
             <footer>
                 <Footer />
