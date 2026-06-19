@@ -1,16 +1,32 @@
 import React from 'react'
 import { client } from '../../../lib/client'
+import { urlFor } from '../../../lib/client';
 
-export default async function ProductDetails( { slug } ){
+// import { Product } from '../../../components/Product'
 
-    const products = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`)
+export default async function ProductDetails( {params } ){
+
+    const { slug } = await params;
+
+    const products  = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`,slug)    
+    // const products = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`)
+    // const productsQuery = await client.fetch(`*[_type == "product"]`)
+
+    // return{
+    //     props : {products,productsQuery }
+    // }
+
+    // const productsQueryEx = await fetch.client(productsQuery)
+
+    const {image, name, details, price} = products || {};
 
     return (
         <div>
             <div>
                 <div>
                     <div>
-                        fzepogkpozjgopzjgjezrjgerjglkerglke
+                        <img src={urlFor(image[0])} />
+                        {console.log(products)}
                     </div>
                 </div>
             </div>
@@ -18,18 +34,39 @@ export default async function ProductDetails( { slug } ){
     )
 }
 
-// export const getStaticProps = async ( {params: {slug}} ) => {
-// //   const query = `*[_type == "product" && slug.current == '${slug}'][0]`
-// //   const products = await client.fetch(query);
+export const getStaticPaths = async() => {
+    const query = `*[_type == "product"]{
+        slug {
+            current
+        }
+    }
+    `
+    const products = await client.fetch(query)
 
-// //   const bannerQuery = '*[_type == "banner"]'
-// //   const bannerData = await client.fetch(bannerQuery);
+    const paths = products.map((product) => ({
+        params : {
+            slug : product.slug.current
+        }
+    }))
+    return {
+        paths,
+        fallback :'blocking'
+    }
+}
+
+export const WIW = async ( {params: {slug}} ) => {
+    const query = `*[_type == "product" && slug.current == '${slug}'][0]`
+
+   const productsQuery = '*[_type == "product"]'
+    const products = await client.fetch(query);
+
+   const productsQueryEx = await client.fetch(productsQuery);
 
 
-// //   return{
-// //     props : {products, bannerData}
-// //   }
-
+   return{
+     props : {products, productsQueryEx}
+   }
+}
 //   const products = await client.fetch(`*[_type == "products" && slug.current == '${slug}'][0]`);
 //   const bannerData = await client.fetch(`*[_type == "banner"]`);
 //   console.log(slug)
