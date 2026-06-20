@@ -22,11 +22,16 @@ export default async function ProductDetails( {params } ){
 
     return (
         <div>
-            <div>
+            <div className='product-detail-container'>
                 <div>
-                    <div>
+                    <div className='image-container'>
                         <img src={urlFor(image[0])} />
                         {console.log(products)}
+                    </div>
+                    <div className='small-images-container'>
+                        {image.map((item, i) =>(
+                            <img />
+                        ))}
                     </div>
                 </div>
             </div>
