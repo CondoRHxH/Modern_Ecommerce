@@ -1,6 +1,7 @@
 import React from 'react'
 import { client } from '../../../lib/client'
 import { urlFor } from '../../../lib/client';
+import {AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-icons/ai'
 
 // import { Product } from '../../../components/Product'
 
@@ -28,12 +29,28 @@ export default async function ProductDetails( {params } ){
                         <img src={urlFor(image[0])} />
                         {console.log(products)}
                     </div>
-                    <div className='small-images-container'>
-                        {image.map((item, i) =>(
-                            <img />
+                    {/* <div className='small-images-container'>
+                        {image?.map((item, i) =>(
+                            <img src={urlFor(item)} />
                         ))}
-                    </div>
+                    </div> */}
                 </div>
+                <div className='product-detail-desc'>
+                    <h1>{name}</h1>
+                    <div className='reviews'>
+                    <div>
+                        <AiFillStar />
+                        <AiFillStar />
+                        <AiFillStar />
+                        <AiFillStar />
+                        <AiOutlineStar/>
+                    </div>
+                    <p>20</p>
+                </div>
+                <h4>Details</h4>
+                    <p>{details}</p>
+                </div>
+                
             </div>
         </div>
     )
