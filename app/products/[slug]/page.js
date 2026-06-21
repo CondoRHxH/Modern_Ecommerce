@@ -3,6 +3,8 @@ import { client } from '../../../lib/client'
 import { urlFor } from '../../../lib/client';
 import {AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-icons/ai'
 
+import  Product  from '../../../components/Product'
+
 // import { Product } from '../../../components/Product'
 
 export default async function ProductDetails( {params } ){
@@ -11,7 +13,7 @@ export default async function ProductDetails( {params } ){
 
     const products  = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`,slug)    
     // const products = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`)
-    // const productsQuery = await client.fetch(`*[_type == "product"]`)
+    const allProducts = await client.fetch(`*[_type == "product"]`)
 
     // return{
     //     props : {products,productsQuery }
@@ -29,11 +31,11 @@ export default async function ProductDetails( {params } ){
                         <img src={urlFor(image[0])} />
                         {console.log(products)}
                     </div>
-                    {/* <div className='small-images-container'>
+                    <div className='small-images-container'>
                         {image?.map((item, i) =>(
-                            <img src={urlFor(item)} />
+                            <img src={urlFor(item)} key={i} />
                         ))}
-                    </div> */}
+                    </div>
                 </div>
                 <div className='product-detail-desc'>
                     <h1>{name}</h1>
@@ -47,11 +49,11 @@ export default async function ProductDetails( {params } ){
                     </div>
                     <p>20</p>
                 </div>
-                <h4>Details</h4>
+                <h4>Details : </h4>
                     <p>{details}</p>
-                    <p>{price}</p>
+                    <p className='price'>$ {price}</p>
                     <div className='quantity'>
-                    <h3>Quantity</h3>
+                    <h3>Quantity :</h3>
                     <p className='quantity-desc'>
                         <span className='minus'>
                             <AiOutlineMinus/>
@@ -62,12 +64,26 @@ export default async function ProductDetails( {params } ){
                         <span className='plus'>
                             <AiOutlinePlus/>
                         </span>
+                        
                     </p>
+                    
                 </div>
+                <div className='buttons'>
+                        <button className='add-to-cart'>Add To Cart</button>
+                        <button className='buy-now'>Buy Now</button>
+                    </div>
+                </div> 
+            </div>
+            <div className='maylike-products-wrapper'>
+                <h2>May Also Like : </h2>
+                <div className='marquee'>
+                    <div className='maylike-products-container'>
+                        {}
+                        {allProducts.map((item) =>(
+                           <Product key={item._id} product={item}/> 
+                        ))}
+                    </div>
                 </div>
-                
-
-                
             </div>
         </div>
     )
