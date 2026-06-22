@@ -1,8 +1,9 @@
-'use client'
-import { useState } from 'react'
+// "use client"
+// import { useState } from 'react'
 import { client } from '../../../lib/client'
 import { urlFor } from '../../../lib/client';
 import {AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-icons/ai'
+import QuantityFunction  from '../../../components/QuantityFunction'
 
 import  Product  from '../../../components/Product'
 
@@ -12,7 +13,7 @@ export default async function ProductDetails( {params } ){
 
     const { slug } = await params;
 
-    const [index, setIndex] = useState(0)
+    // const [index, setIndex] = useState(0)
 
     const products  = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`,slug)    
     // const products = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`)
@@ -29,7 +30,8 @@ export default async function ProductDetails( {params } ){
     return (
         <div>
             <div className='product-detail-container'>
-                <div>
+                <QuantityFunction OPO={image}/>
+                {/* <div>
                     <div className='image-container'>
                         <img src={urlFor(image[0])} className='product-detail-image' />
                         {console.log(products)}
@@ -42,7 +44,7 @@ export default async function ProductDetails( {params } ){
                             />
                         ))}
                     </div>
-                </div>
+                </div> */}
                 <div className='product-detail-desc'>
                     <h1>{name}</h1>
                     <div className='reviews'>

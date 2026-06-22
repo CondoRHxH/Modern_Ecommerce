@@ -52,7 +52,7 @@ export default async function Home() {
       </div>
 
       <div className='products-container'>
-        {products?.map((product: any) => <Product key={product._id} Product={product} /> ) }
+        {products?.map((product: any) => <Product key={product._id} product={product} /> ) }
       </div>
 
       <FooterBanner footerBanner={bannerData && bannerData[0]}/>
