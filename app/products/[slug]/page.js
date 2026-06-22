@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import { useState } from 'react'
 import { client } from '../../../lib/client'
 import { urlFor } from '../../../lib/client';
 import {AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-icons/ai'
@@ -10,6 +11,8 @@ import  Product  from '../../../components/Product'
 export default async function ProductDetails( {params } ){
 
     const { slug } = await params;
+
+    const [index, setIndex] = useState(0)
 
     const products  = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`,slug)    
     // const products = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`)
@@ -28,12 +31,15 @@ export default async function ProductDetails( {params } ){
             <div className='product-detail-container'>
                 <div>
                     <div className='image-container'>
-                        <img src={urlFor(image[0])} />
+                        <img src={urlFor(image[0])} className='product-detail-image' />
                         {console.log(products)}
                     </div>
                     <div className='small-images-container'>
                         {image?.map((item, i) =>(
-                            <img src={urlFor(item)} key={i} />
+                            <img src={urlFor(item)} key={i} 
+                            className={i === index ? 'small-image selected-image' : 'small-image'}
+                            onMouseEnter={() => setIndex(i)}
+                            />
                         ))}
                     </div>
                 </div>
@@ -66,7 +72,7 @@ export default async function ProductDetails( {params } ){
                         </span>
                         
                     </p>
-                    
+                    {console.log("Zfkaf,ao,fafoakfoa,fa",products)}
                 </div>
                 <div className='buttons'>
                         <button className='add-to-cart'>Add To Cart</button>
@@ -77,8 +83,8 @@ export default async function ProductDetails( {params } ){
             <div className='maylike-products-wrapper'>
                 <h2>May Also Like : </h2>
                 <div className='marquee'>
-                    <div className='maylike-products-container'>
-                        {}
+                    <div className='maylike-products-container track'>
+                        
                         {allProducts.map((item) =>(
                            <Product key={item._id} product={item}/> 
                         ))}
