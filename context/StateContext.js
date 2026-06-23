@@ -43,3 +43,5 @@ export const StateContext = ({children}) => {
         </Context.Provider>
     )
 }
+
+export default useStateContext = () => useContext(Context)

@@ -6,6 +6,9 @@ import {AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-ic
 import QuantityFunction  from '../../../components/QuantityFunction'
 
 import  Product  from '../../../components/Product'
+import { useContext } from 'react';
+
+import { StateContext } from '../../../context/StateContext';
 
 // import { Product } from '../../../components/Product'
 
@@ -18,6 +21,8 @@ export default async function ProductDetails( {params } ){
     const products  = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`,slug)    
     // const products = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`)
     const allProducts = await client.fetch(`*[_type == "product"]`)
+
+    const {incQty, decQty, qty} = useStateContext(Context)
 
     // return{
     //     props : {products,productsQuery }
