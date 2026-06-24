@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 // import { useState } from 'react'
 import { client } from '../../../lib/client'
 import { urlFor } from '../../../lib/client';
@@ -6,9 +6,12 @@ import {AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-ic
 import QuantityFunction  from '../../../components/QuantityFunction'
 
 import  Product  from '../../../components/Product'
-import { useContext } from 'react';
+
+import { createContext, useState, useContext } from 'react';
 
 import { StateContext } from '../../../context/StateContext';
+
+// import { useStateContext } from '../../../context/StateContext'
 
 // import { Product } from '../../../components/Product'
 
