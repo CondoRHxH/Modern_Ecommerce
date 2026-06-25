@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 // import { useState } from 'react'
 import { client } from '../../../lib/client'
 import { urlFor } from '../../../lib/client';
@@ -7,9 +7,11 @@ import QuantityFunction  from '../../../components/QuantityFunction'
 
 import  Product  from '../../../components/Product'
 
-import { createContext, useState, useContext } from 'react';
+import { ContextMinus } from '../../../context/ContextMinus'
 
-import { StateContext } from '../../../context/StateContext';
+// import { createContext, useState, useContext } from 'react';
+
+// import { StateContext } from '../../../context/StateContext';
 
 // import { useStateContext } from '../../../context/StateContext'
 
@@ -25,7 +27,7 @@ export default async function ProductDetails( {params } ){
     // const products = await client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`)
     const allProducts = await client.fetch(`*[_type == "product"]`)
 
-    const {incQty, decQty, qty} = useStateContext(Context)
+    // const {incQty, decQty, qty} = useStateContext(Context)
 
     // return{
     //     props : {products,productsQuery }
@@ -77,7 +79,7 @@ export default async function ProductDetails( {params } ){
                         <span className='num'>
                             0
                         </span>
-                        <span className='plus'>
+                        <span className='plus' props={ContextMinus}>
                             <AiOutlinePlus/>
                         </span>
                         

@@ -44,4 +44,4 @@ export const StateContext = ({children}) => {
     )
 }
 
-export default useStateContext = () => useContext(Context)
+export const useStateContext = () => useContext(Context)
