@@ -1,14 +1,14 @@
-import { useContext } from "react"
+// import { useContext, useState } from "react"
 
 
-export default ContextMinus = ( {props}) => {
+// export default ContextMinus = ( {props}) => {
 
-    const {incQty, decQty, qty} = useStateContext(Context)
+//     const {incQty, decQty: contextDecQty, qty: contextQty} = useStateContext(Context)
 
+//     const [qty, setQty] = useState(0)
 
-    const decQty = () => {
+//     const decQty = () => {
+//         setQty(qty - 1)
+//     }
 
-        qty(() => setQty(qty-1))
-    }
-
-}
+// }

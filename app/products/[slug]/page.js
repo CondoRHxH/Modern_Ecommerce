@@ -7,7 +7,7 @@ import QuantityFunction  from '../../../components/QuantityFunction'
 
 import  Product  from '../../../components/Product'
 
-import { ContextMinus } from '../../../context/ContextMinus'
+// import { ContextMinus } from '../../../context/ContextMinus'
 
 // import { createContext, useState, useContext } from 'react';
 
@@ -79,7 +79,7 @@ export default async function ProductDetails( {params } ){
                         <span className='num'>
                             0
                         </span>
-                        <span className='plus' props={ContextMinus}>
+                        <span className='plus'>
                             <AiOutlinePlus/>
                         </span>
                         
