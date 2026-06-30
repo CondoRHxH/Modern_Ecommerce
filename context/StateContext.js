@@ -9,31 +9,36 @@ export const StateContext = ({children}) => {
 
     const[showCart, setShowCart] = useState(false)
 
-    const[cartItems, setCartItems] = useState()
+    const[cartItems, setCartItems] = useState([])
 
-    const [totalPrice, setTotalPrice] = useState()
+    const [totalPrice, setTotalPrice] = useState(0)
 
-    const[totalQuantities, setTotalQuantities] = useState()
+    const[totalQuantities, setTotalQuantities] = useState(0)
 
     const[qty, setQty] = useState(1)
 
     const onAdd = (product, quantity) => {
         const checkProductInCart = cartItems.find((item) => item._id === product._id)
 
-        if (checkProductInCart) {
-            setTotalPrice((prevtotalPrice) => prevtotalPrice + product.price * quantity)
-            setTotalQuantities((prevtotalQuantities) => prevtotalQuantities + product.price + quantity)
-        }
-
-        const updatedCartItems = cartItems.map((cartProduct) =>{
+        setTotalPrice((prevtotalPrice) => prevtotalPrice + product.price * quantity)
+        setTotalQuantities((prevtotalQuantities) => prevtotalQuantities + product.price + quantity)
+        
+        if (checkProductInCart) {    
+            const updatedCartItems = cartItems.map((cartProduct) =>{
             if(cartProduct._id === product._id) return {
                 ...cartProduct,
                 quantity : cartProduct.quantity + quantity
             }
         })
-
         setCartItems(updatedCartItems)
+        }
+        else {
+        product.quantity = quantity;
+
+        setCartItems([...cartItems, {...product}])
+        }
         toast.success(`${qty} ${product.name} added succfully ajomi`)
+    
     }
 
     const incQty = () =>{
@@ -57,7 +62,8 @@ export const StateContext = ({children}) => {
             totalQuantities,
             qty,
             incQty,
-            decQty
+            decQty,
+            onAdd
         }}>
             {children}
         </Context.Provider>

@@ -7,7 +7,7 @@ import { useStateContext } from "./StateContext";
 import {AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-icons/ai'
 
 export default function ContextMinus( {products} ){
-    const {qty, decQty, incQty} = useStateContext()
+    const {qty, decQty, incQty, onAdd} = useStateContext()
 
     return(
         <>

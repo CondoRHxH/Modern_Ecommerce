@@ -7,6 +7,7 @@ import QuantityFunction  from '../../../components/QuantityFunction'
 
 import  Product  from '../../../components/Product'
 
+import AddingToCart from '../../../context/AddingToCart';
 
 // import { createContext, useState, useContext } from 'react';
 
@@ -89,8 +90,9 @@ export default async function ProductDetails( {params} ){
                     {console.log("Zfkaf,ao,fafoakfoa,fa",products)}
                 </div> */}
                 <div className='buttons'>
-                        <button className='add-to-cart'>Add To Cart</button>
-                        <button className='buy-now'>Buy Now</button>
+                        {/* <button className='add-to-cart'>Add To Cart</button>
+                        <button className='buy-now'>Buy Now</button> */}
+                        <AddingToCart product={products}/>
                     </div>
                 </div> 
             </div>
