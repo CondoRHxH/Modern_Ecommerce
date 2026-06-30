@@ -72,7 +72,7 @@ export default async function ProductDetails( {params} ){
                     <p>{details}</p>
                     <p className='price'>$ {price}</p>
                      <ContextMinus product={products}/>
-                    <div className='quantity'>
+                    {/* <div className='quantity'>
                     <h3>Quantity :</h3>
                     <p className='quantity-desc'>
                         <span className='minus'>
@@ -87,7 +87,7 @@ export default async function ProductDetails( {params} ){
                         
                     </p>
                     {console.log("Zfkaf,ao,fafoakfoa,fa",products)}
-                </div>
+                </div> */}
                 <div className='buttons'>
                         <button className='add-to-cart'>Add To Cart</button>
                         <button className='buy-now'>Buy Now</button>

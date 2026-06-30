@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components";
 import { Layout } from "@/components";
+import { StateContext } from '../context/StateContext'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
         <Layout>
+          <StateContext>
           {children}
+          </StateContext>
         </Layout>
       </body>
     </html>
