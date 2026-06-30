@@ -7,7 +7,6 @@ import QuantityFunction  from '../../../components/QuantityFunction'
 
 import  Product  from '../../../components/Product'
 
-// import { ContextMinus } from '../../../context/ContextMinus'
 
 // import { createContext, useState, useContext } from 'react';
 
@@ -17,7 +16,9 @@ import  Product  from '../../../components/Product'
 
 // import { Product } from '../../../components/Product'
 
-export default async function ProductDetails( {params } ){
+import ContextMinus from '../../../context/ContextMinus'
+
+export default async function ProductDetails( {params} ){
 
     const { slug } = await params;
 
@@ -70,6 +71,7 @@ export default async function ProductDetails( {params } ){
                 <h4>Details : </h4>
                     <p>{details}</p>
                     <p className='price'>$ {price}</p>
+                     <ContextMinus product={products}/>
                     <div className='quantity'>
                     <h3>Quantity :</h3>
                     <p className='quantity-desc'>

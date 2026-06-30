@@ -1,14 +1,20 @@
-// import { useContext, useState } from "react"
+"use client"
+
+import { useContext } from "react";
+
+import { useStateContext } from "./StateContext";
 
 
-// export default ContextMinus = ( {props}) => {
 
-//     const {incQty, decQty: contextDecQty, qty: contextQty} = useStateContext(Context)
 
-//     const [qty, setQty] = useState(0)
+export default function ContextMinus( {products} ){
+    const {qty, decQty, incQty} = useStateContext()
 
-//     const decQty = () => {
-//         setQty(qty - 1)
-//     }
-
-// }
+    return(
+        <>
+        <button onClick={decQty}>--------</button>
+            {qty}
+        <button onClick={incQty}>+++++</button>
+        </>
+    )
+}

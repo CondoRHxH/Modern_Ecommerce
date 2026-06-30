@@ -1,3 +1,4 @@
+"use client"
 import { useState, useContext, createContext, useEffect } from "react";
 
 import { toast } from 'react-hot-toast'
