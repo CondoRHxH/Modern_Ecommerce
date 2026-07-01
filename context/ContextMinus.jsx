@@ -30,7 +30,11 @@ export default function ContextMinus( {products} ){
                         
                     </p>
                     {console.log("Zfkaf,ao,fafoakfoa,fa",products)}
-                </div>
+        </div>
+        <>
+            {/* <button className='add-to-cart' onClick={() => onAdd(products, qty)}>Add To Cart</button>
+            <button className='buy-now'>Buy Now</button> */}
+        </>
         </>
     )
 }
