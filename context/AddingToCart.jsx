@@ -7,6 +7,8 @@ import { useStateContext } from "./StateContext";
 export default function AddingToCart( {product} ){
 
     const {qty, decQty, incQty, onAdd} = useStateContext()
+    // {console.log("ADDDINGTOCART",product)}
+
 
     return(
         <>
@@ -15,6 +17,5 @@ export default function AddingToCart( {product} ){
         </>
         
     )
-    {console.log("ADDDINGTOCART",product)}
 
 }

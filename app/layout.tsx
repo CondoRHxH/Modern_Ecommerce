@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components";
 import { Layout } from "@/components";
 import { StateContext } from '../context/StateContext'
+import { Toaster } from 'react-hot-toast';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
         <Layout>
           <StateContext>
+          <Toaster />
           {children}
           </StateContext>
         </Layout>

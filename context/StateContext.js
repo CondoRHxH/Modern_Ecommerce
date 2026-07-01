@@ -2,6 +2,8 @@
 import { useState, useContext, createContext, useEffect } from "react";
 
 import { toast } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast';
+
 
 const Context = createContext();
 
@@ -30,6 +32,7 @@ export const StateContext = ({children}) => {
                 quantity : cartProduct.quantity + quantity
             }
         })
+        
         setCartItems(updatedCartItems)
         }
         else {
@@ -38,6 +41,9 @@ export const StateContext = ({children}) => {
         setCartItems([...cartItems, {...product}])
         }
         toast.success(`${qty} ${product.name} added succfully ajomi`)
+        console.log("product", product)
+        console.log("quantity", quantity)
+        console.log("cartItems", cartItems)
     
     }
 
