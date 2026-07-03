@@ -72,6 +72,7 @@ export const StateContext = ({children}) => {
             decQty,
             onAdd
         }}>
+            {/* <Layout></Layout> */}
             {children}
         </Context.Provider>
     )

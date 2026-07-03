@@ -32,12 +32,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        <Layout>
           <StateContext>
+            <Layout>
+
+            {/* <Navba></Navba> */}
           <Toaster />
           {children}
+          </Layout>
           </StateContext>
-        </Layout>
       </body>
     </html>
     
