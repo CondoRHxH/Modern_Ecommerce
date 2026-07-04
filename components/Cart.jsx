@@ -12,7 +12,7 @@ import { useStateContext } from '@/context/StateContext';
 const Cart = () => {
     const cartRef = useRef();
 
-    const {totalPrice, totalQuantities, cartItems, setShowCart} = useStateContext()
+    const {totalPrice, totalQuantities, cartItems, setShowCart, decQty, incQty,qty} = useStateContext()
     return (
         <div className='cart-wrapper' ref={cartRef}>
             <div className='cart-container'>
@@ -32,14 +32,43 @@ const Cart = () => {
                         </button>
                     </div> 
                 )}
-            </div>
-            <div className='product-container'>
-                {cartItems > 1 && cartItems.map((item) => (
+                <div className='product-container'>
+                {cartItems.length >= 1 && cartItems.map((item) => (
                     <div className='product' key={item._id}>
-                        <img src={urlFor(item?.image[0])}/>
+                        <img src={urlFor(item?.image[0])} className='cart-product-image'/>
+                        <div className='item-desc'>
+                            <div className='flex top'>
+                                <h2>{item.name}</h2>
+                                <h3>Price : {item.price}$</h3>
+                            </div>
+                            <div className='flex bottom'>
+                                    {cartItems.map((item) =>(
+                                    <div  key={item._id}>
+                                    <p className='quantity-desc'>
+                                        <span className='minus'>
+                                            <AiOutlineMinus onClick={decQty}/>
+                                        </span>
+                                        <span className='num'>
+                                            {qty}
+                                        </span>
+                                        <span className='plus' onClick={incQty}>
+                                            <AiOutlinePlus/>
+                                                {console.log(qty)}
+                                        </span>
+                                    </p>
+                                    </div>
+
+                                    ))}
+                                <h6>Quantitie Ordered : {qty}</h6>
+                                <h6>Total Price : {totalPrice * qty}</h6>
+                            </div>
+                            
+                        </div>
                     </div>
                 )) }
             </div>
+            </div>
+            
         </div>
     )
 }
