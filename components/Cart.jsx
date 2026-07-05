@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import { TiDeleteOutline } from 'react-icons/ti'
 import { Toast } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import { urlFor } from '@/lib/client';
 
 import { useStateContext } from '@/context/StateContext';
@@ -49,7 +50,7 @@ const Cart = () => {
                                             <AiOutlineMinus onClick={decQty}/>
                                         </span>
                                         <span className='num'>
-                                            {qty}
+                                            {totalQuantities + qty - 1}
                                         </span>
                                         <span className='plus' onClick={incQty}>
                                             <AiOutlinePlus/>
@@ -59,7 +60,7 @@ const Cart = () => {
                                     </div>
 
                                     ))}
-                                <h6>Quantitie Ordered : {qty}</h6>
+                                <h6>Quantitie Ordered : {totalQuantities + qty - 1}</h6>
                                 <h6>Total Price : {totalPrice * qty}</h6>
                             </div>
                             

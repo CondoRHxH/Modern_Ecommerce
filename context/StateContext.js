@@ -54,7 +54,11 @@ export const StateContext = ({children}) => {
 
     const decQty = () => {
         setQty((prevQty) => {
-            if(prevQty - 1 < 1) return 1;
+            if(prevQty - 1 < 1){
+                console.log("zkegnzngjkz")
+                toast.error(`Can't go lower`)
+                return 1;
+            } 
             
             return prevQty - 1
         })
