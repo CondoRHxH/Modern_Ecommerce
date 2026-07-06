@@ -50,18 +50,22 @@ const Cart = () => {
                                             <AiOutlineMinus onClick={decQty}/>
                                         </span>
                                         <span className='num'>
-                                            {totalQuantities + qty - 1}
+                                            {item.quantity}
+                                                {console.log("Totaaaaaaal",totalQuantities)}
+                                                {console.log("ononon",item.quantity)}
+
                                         </span>
                                         <span className='plus' onClick={incQty}>
                                             <AiOutlinePlus/>
-                                                {console.log(qty)}
+                                                {console.log("Riwhda",qty)}
                                         </span>
                                     </p>
                                     </div>
 
                                     ))}
-                                <h6>Quantitie Ordered : {totalQuantities + qty - 1}</h6>
-                                <h6>Total Price : {totalPrice * qty}</h6>
+                                <h6>Quantitie Ordered : {totalQuantities}</h6>
+                                <h6>Total Price : {totalPrice}</h6>
+                                    {console.log("TAMAN A3CHIRIRII",totalPrice)}
                             </div>
                             
                         </div>
