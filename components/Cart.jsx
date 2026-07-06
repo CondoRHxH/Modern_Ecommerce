@@ -63,7 +63,7 @@ const Cart = () => {
                                     </div>
 
                                     ))}
-                                <h6>Quantitie Ordered : {totalQuantities}</h6>
+                                <h6>Quantitie Ordered : {item.quantity}</h6>
                                 <h6>Total Price : {totalPrice}</h6>
                                     {console.log("TAMAN A3CHIRIRII",totalPrice)}
                             </div>
