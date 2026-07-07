@@ -4,6 +4,8 @@ import { useState, useContext, createContext, useEffect } from "react";
 import { toast } from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast';
 
+let foundProduct;
+let index;
 
 const Context = createContext();
 

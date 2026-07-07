@@ -43,32 +43,37 @@ const Cart = () => {
                                 <h3>Price : {item.price}$</h3>
                             </div>
                             <div className='flex bottom'>
-                                    {cartItems.map((item) =>(
-                                    <div  key={item._id}>
+                                <div>
                                     <p className='quantity-desc'>
                                         <span className='minus'>
-                                            <AiOutlineMinus onClick={decQty}/>
+                                            <AiOutlineMinus/>
                                         </span>
                                         <span className='num'>
-                                            {item.quantity}
-                                                {console.log("Totaaaaaaal",totalQuantities)}
-                                                {console.log("ononon",item.quantity)}
-
+                                            0
                                         </span>
-                                        <span className='plus' onClick={incQty}>
+                                        <span className='plus'>
                                             <AiOutlinePlus/>
-                                                {console.log("Riwhda",qty)}
                                         </span>
                                     </p>
-                                    </div>
-
-                                    ))}
-                                <h6>Quantitie Ordered : {item.quantity}</h6>
-                                <h6>Total Price : {totalPrice}</h6>
-                                    {console.log("TAMAN A3CHIRIRII",totalPrice)}
+                                </div>
+                                <button className='remove-item'>
+                                    <TiDeleteOutline/>
+                                </button>
                             </div>
-                            
                         </div>
+                        {cartItems.length >= 1 && (
+                            <div className='cart-bottom'>
+                                <div className='total'>
+                                    <h3>Subtotal :</h3>
+                                    <h3>{totalPrice} $</h3>
+                                </div>
+                                <div className='btn-container'>
+                                    <button className='btn'>
+                                        Pay Now
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 )) }
             </div>
