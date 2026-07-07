@@ -66,6 +66,11 @@ export const StateContext = ({children}) => {
         })
     }
 
+    const toogleCartItemQuantity = (value, id) => {
+        foundProduct = cartItems.find((item) => item_id == id)
+        index = cartItems.findIndex((product) => product._id == id)
+    }
+
     
     return(
         <Context.Provider value={{
