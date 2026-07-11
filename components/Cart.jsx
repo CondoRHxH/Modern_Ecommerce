@@ -13,7 +13,7 @@ import { useStateContext } from '@/context/StateContext';
 const Cart = () => {
     const cartRef = useRef();
 
-    const {totalPrice, totalQuantities, cartItems, setShowCart, decQty, incQty,qty} = useStateContext()
+    const {totalPrice, totalQuantities, cartItems, setShowCart, qty, toogleCartItemQuantity} = useStateContext()
     return (
         <div className='cart-wrapper' ref={cartRef}>
             <div className='cart-container'>
@@ -45,14 +45,14 @@ const Cart = () => {
                             <div className='flex bottom'>
                                 <div>
                                     <p className='quantity-desc'>
-                                        <span className='minus'>
+                                        <span className='minus'  onClick={() => toogleCartItemQuantity(item._id, 'desc')}>
                                             <AiOutlineMinus/>
                                         </span>
                                         <span className='num'>
                                             {qty}
                                         </span>
                                         <span className='plus'>
-                                            <AiOutlinePlus/>
+                                            <AiOutlinePlus onClick={() => toogleCartItemQuantity(item._id, 'inc')}/>
                                         </span>
                                     </p>
                                 </div>
