@@ -66,8 +66,8 @@ export const StateContext = ({children}) => {
         })
     }
 
-    const toogleCartItemQuantity = (value, id) => {
-        foundProduct = cartItems.find((item) => item_id == id)
+    const toogleCartItemQuantity = (id, value) => {
+        foundProduct = cartItems.find((item) => item._id == id)
         index = cartItems.findIndex((product) => product._id == id)
         
         if(value === 'inc'){
