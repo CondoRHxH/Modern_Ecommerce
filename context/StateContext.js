@@ -66,6 +66,16 @@ export const StateContext = ({children}) => {
         })
     }
 
+    const onRemove = (id, value) =>{
+        foundProduct = cartItems.find((item) => item._id == id)
+        index = cartItems.findIndex((product) => product._id == id)
+        
+        if(value=== 'sup'){
+            const delProduct = cartItems.pop((item) => item._id == id)
+            setCartItems(delProduct)
+        }
+    }
+
     const toogleCartItemQuantity = (id, value) => {
         foundProduct = cartItems.find((item) => item._id == id)
         index = cartItems.findIndex((product) => product._id == id)
@@ -98,7 +108,8 @@ export const StateContext = ({children}) => {
             incQty,
             decQty,
             onAdd,
-            toogleCartItemQuantity
+            toogleCartItemQuantity,
+            onRemove
         }}>
             {/* <Layout></Layout> */}
             {children}
