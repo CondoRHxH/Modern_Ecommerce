@@ -57,7 +57,7 @@ const Cart = () => {
                                     </p>
                                 </div>
                                 <button className='remove-item'>
-                                    <TiDeleteOutline onClick={()=> onRemove(item._id, 'sup')}/>
+                                    <TiDeleteOutline onClick={()=> onRemove(item)}/>
                                 </button>
                             </div>
                         </div>
