@@ -10,6 +10,7 @@ export async function POST(){
         const origin = headersList.get('origin')
 
         const session = await stripe.checkout.session.create({
+            params : {submit_type},
             line_items: [
                 {
                     price:'foundProduct.price',

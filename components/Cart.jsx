@@ -69,7 +69,9 @@ const Cart = () => {
                                 </div>
                                 <div className='btn-container'>
                                     <button className='btn'>
-                                        Pay Now
+                                        {/* <Link href={'stripe.js'}> */}
+                                            PAY NOW
+                                        {/* </Link> */}
                                     </button>
                                 </div>
                             </div>
