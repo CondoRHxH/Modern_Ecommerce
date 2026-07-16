@@ -10,7 +10,16 @@ export async function POST(){
         const origin = headersList.get('origin')
 
         const session = await stripe.checkout.session.create({
-            params : {submit_type},
+            params : {
+                submit_type: 'pay',
+                mode: 'payment',
+                payment_method_types: ['card'],
+                billing_address_collection:'auto',
+                shipping_options:[
+                    {shipping_rate:'shr_1TtWpuBr8a9gNlXuRFiW46KL'},
+                    {shipping_rate:'shr_1TtsTnBr8a9gNlXuS7jj6jEu'},
+                ]
+            },
             line_items: [
                 {
                     price:'foundProduct.price',
