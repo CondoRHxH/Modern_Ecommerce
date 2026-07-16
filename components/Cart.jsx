@@ -1,5 +1,5 @@
 "use client"
-import React, {useRef} from 'react';
+import {useRef} from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import Link from 'next/link';
 
@@ -8,7 +8,29 @@ import { Toast } from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 import { urlFor } from '@/lib/client';
 
+import { getStripe } from '../lib/getStripe'
+
 import { useStateContext } from '@/context/StateContext';
+
+const handleCheckout = async() => {
+    const Stripe = await getStripe()
+
+    const response = await fetch('/api/Stripe', {
+        method :'POST',
+        headers :{
+            'Content-type' : 'application/json',
+        },
+        body:JSON.stringify(cartItems)
+    })
+
+    if(!response.ok) return;
+
+    const data = await response.json()
+
+    toast.loading('Redirecting...')
+
+    stripe.redirectToCheckout({ sessionId :data.id })
+}
 
 const Cart = () => {
     const cartRef = useRef();
