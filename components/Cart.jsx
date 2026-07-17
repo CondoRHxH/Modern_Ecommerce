@@ -8,7 +8,7 @@ import { Toast } from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 import { urlFor } from '@/lib/client';
 
-import { getStripe } from '../lib/getStripe'
+import getStripe  from '../lib/getStripe'
 
 import { useStateContext } from '@/context/StateContext';
 
@@ -90,10 +90,8 @@ const Cart = () => {
                                     <h3>{totalPrice} $</h3>
                                 </div>
                                 <div className='btn-container'>
-                                    <button className='btn'>
-                                        {/* <Link href={'stripe.js'}> */}
-                                            PAY NOW
-                                        {/* </Link> */}
+                                    <button className='btn' onClick={handleCheckout}>
+                                        PAY NOW                                        
                                     </button>
                                 </div>
                             </div>

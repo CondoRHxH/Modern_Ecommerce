@@ -9,6 +9,7 @@ export async function POST(){
         const headersList = await headers()
         const origin = headersList.get('origin')
 
+        console.log(req.body.cartItems)
         const session = await stripe.checkout.session.create({
             params : {
                 submit_type: 'pay',
