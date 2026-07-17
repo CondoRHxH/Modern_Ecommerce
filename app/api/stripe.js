@@ -4,12 +4,30 @@ import Stripe from 'stripe'
 
 const Stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
-export async function POST(){
+export async function POST(req){
     try{
         const headersList = await headers()
         const origin = headersList.get('origin')
 
-        console.log(req.body.cartItems)
+        const body = await req.json()
+        const {cartItems} = body
+
+        const lineItems = cartItems.map((item) =>{
+            const img = item.image[0].asset._ref;
+            const newImage = img.replace('image-','https://cdn.stripe.io/images/i84j8yey/production').replace('-webp','.webp')
+            
+        })
+        return {
+            price_data:{
+                currency:'usd',
+                product_data:{
+                    name:item.name,
+                    images:[newImage],
+                },
+                unit_amount:item_price * 100,
+            },
+            quantity: item.quantity,
+        }
         const session = await stripe.checkout.session.create({
             params : {
                 submit_type: 'pay',
@@ -22,9 +40,7 @@ export async function POST(){
                 ]
             },
             line_items:req.body.mapItems((item) => {
-                const img = item.image[0].asset._ref;
-                const newImage = img.replace('image-','https://cdn.stripe.io/images/')
-            }),
+                }),
             mode: 'payment',
             success_url : `${origin}/success?session_id={}`,
             cancel_url: `${origin}/?canceled=true`,
