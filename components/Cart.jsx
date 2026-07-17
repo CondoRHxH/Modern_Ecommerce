@@ -12,30 +12,32 @@ import getStripe  from '../lib/getStripe'
 
 import { useStateContext } from '@/context/StateContext';
 
-const handleCheckout = async() => {
-    const Stripe = await getStripe()
-
-    const response = await fetch('/api/Stripe', {
-        method :'POST',
-        headers :{
-            'Content-type' : 'application/json',
-        },
-        body:JSON.stringify(cartItems)
-    })
-
-    if(!response.ok) return;
-
-    const data = await response.json()
-
-    toast.loading('Redirecting...')
-
-    stripe.redirectToCheckout({ sessionId :data.id })
-}
 
 const Cart = () => {
     const cartRef = useRef();
 
     const {totalPrice, totalQuantities, cartItems, setShowCart, qty, toogleCartItemQuantity, onRemove} = useStateContext()
+   
+    const handleCheckout = async() => {
+        const Stripe = await getStripe()
+
+        const response = await fetch('/api/stripe', {
+            method :'POST',
+            headers :{
+                'Content-type' : 'application/json',
+            },
+            body:JSON.stringify(cartItems)
+        })
+
+        if(!response.ok) return;
+
+        const data = await response.json()
+
+        toast.loading('Redirecting...')
+
+        stripe.redirectToCheckout({ sessionId :data.id })
+    }
+
     return (
         <div className='cart-wrapper' ref={cartRef}>
             <div className='cart-container'>

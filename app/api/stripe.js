@@ -21,12 +21,10 @@ export async function POST(){
                     {shipping_rate:'shr_1TtsTnBr8a9gNlXuS7jj6jEu'},
                 ]
             },
-            line_items: [
-                {
-                    price:'foundProduct.price',
-                    quantity : 1,
-                },
-            ],
+            line_items:req.body.mapItems((item) => {
+                const img = item.image[0].asset._ref;
+                const newImage = img.replace('image-','https://cdn.stripe.io/images/')
+            }),
             mode: 'payment',
             success_url : `${origin}/success?session_id={}`,
             cancel_url: `${origin}/?canceled=true`,
