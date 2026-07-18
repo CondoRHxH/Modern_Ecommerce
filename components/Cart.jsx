@@ -4,8 +4,8 @@ import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 
 import Link from 'next/link';
 
 import { TiDeleteOutline } from 'react-icons/ti'
-import { Toast } from 'react-hot-toast';
-import { Toaster } from 'react-hot-toast';
+// import {  } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { urlFor } from '@/lib/client';
 
 import getStripe  from '../lib/getStripe'
@@ -19,23 +19,29 @@ const Cart = () => {
     const {totalPrice, totalQuantities, cartItems, setShowCart, qty, toogleCartItemQuantity, onRemove} = useStateContext()
    
     const handleCheckout = async() => {
-        const Stripe = await getStripe()
+        toast.loading('Redirecting to secure checkout...');
 
-        const response = await fetch('/api/stripe', {
-            method :'POST',
-            headers :{
-                'Content-type' : 'application/json',
-            },
-            body:JSON.stringify(cartItems)
-        })
+        try{
+            const response = await fetch('/api/stripe', {
+                method :'POST',
+                headers :{
+                    'Content-Type' : 'application/json',
+                },
+                body:JSON.stringify({ cartItems: cartItems })
+            })
 
-        if(!response.ok) return;
+            const data = await response.json()
 
-        const data = await response.json()
 
-        toast.loading('Redirecting...')
+            if (data.url) {
+                window.location.href = data.url;
+            }
 
-        stripe.redirectToCheckout({ sessionId :data.id })
+        } catch(error){
+            console.error("Checkout Error: ", error);
+            toast.error('Something went wrong!');
+        }
+        
     }
 
     return (
