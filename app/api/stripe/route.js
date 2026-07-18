@@ -2,7 +2,7 @@ import { headers } from 'next/headers';
 import 'server-only'
 import Stripe from 'stripe'
 
-const Stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export async function POST(req){
     try{
@@ -17,34 +17,33 @@ export async function POST(req){
             const newImage = img.replace('image-','https://cdn.stripe.io/images/i84j8yey/production').replace('-webp','.webp')
             
         })
-        return {
-            price_data:{
-                currency:'usd',
-                product_data:{
-                    name:item.name,
-                    images:[newImage],
+            return {
+                price_data:{
+                    currency:'usd',
+                    product_data:{
+                        name:item.name,
+                        images:[newImage],
+                    },
+                    unit_amount:item.price * 100,
                 },
-                unit_amount:item_price * 100,
-            },
-            quantity: item.quantity,
-        }
-        const session = await stripe.checkout.session.create({
-            params : {
-                submit_type: 'pay',
-                mode: 'payment',
-                payment_method_types: ['card'],
-                billing_address_collection:'auto',
-                shipping_options:[
-                    {shipping_rate:'shr_1TtWpuBr8a9gNlXuRFiW46KL'},
-                    {shipping_rate:'shr_1TtsTnBr8a9gNlXuS7jj6jEu'},
-                ]
-            },
-            line_items:req.body.mapItems((item) => {
-                }),
+                quantity: item.quantity,
+            }
+        const session = await stripe.checkout.sessions.create({
+            submit_type: 'pay',
             mode: 'payment',
+            payment_method_types: ['card'],
+            billing_address_collection:'auto',
+            shipping_options:[
+                {shipping_rate:'shr_1TtWpuBr8a9gNlXuRFiW46KL'},
+                {shipping_rate:'shr_1TtsTnBr8a9gNlXuS7jj6jEu'},
+            ],
+            
+            line_items:lineItems,
             success_url : `${origin}/success?session_id={}`,
             cancel_url: `${origin}/?canceled=true`,
     })
+
+        return NextResponse.json({ url: session.url })
 
     }catch(error){
         console.error("Stripe error",error);
