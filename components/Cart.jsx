@@ -12,7 +12,6 @@ import getStripe  from '../lib/getStripe'
 
 import { useStateContext } from '@/context/StateContext';
 
-
 const Cart = () => {
     const cartRef = useRef();
 
