@@ -10,20 +10,20 @@ const FooterBanner = ( {footerBanner : {image, discount, largeText1, largeText2,
         <div className='footer-banner-container'>
             <div className='banner-desc'>
                 <div className='left'>
-                    <p>{discount}</p>
-                    <p>{largeText1}</p>
+                    {/* <p>{discount}</p> */}
+                    <h3>{largeText1}</h3>
                     <p>{largeText2}</p>
-                    <p>{saleTime}</p>
+                    {/* <p>{saleTime}</p> */}
                 </div>
                 <div className='right'>
-                    <p>{smallText}</p>
-                    <p>{midText}</p>
+                    {/* <p>{smallText}</p> */}
+                    <h3>{midText}</h3>
                     <p>{desc}</p>
                     <Link href={`/products/${product}`}>
                         <button className=''>{buttonText}</button>
                     </Link>
                 </div>
-                    <img src={urlFor(image)} alt="Product-Image" className='footer-banner-image' height={255} width={255}/>
+                    <img src={urlFor(image)} alt="Product-Image" className='footer-banner-image' height={300} width={300}/>
             </div>
         </div>
     )
