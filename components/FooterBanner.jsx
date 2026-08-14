@@ -10,13 +10,13 @@ const FooterBanner = ( {footerBanner : {image, discount, largeText1, largeText2,
         <div className='footer-banner-container'>
             <div className='banner-desc'>
                 <div className='left'>
-                    {/* <p>{discount}</p> */}
+                    <p>{discount}</p>
                     <h3>{largeText1}</h3>
                     <p>{largeText2}</p>
                     {/* <p>{saleTime}</p> */}
                 </div>
                 <div className='right'>
-                    {/* <p>{smallText}</p> */}
+                    <p>{smallText}</p>
                     <h3>{midText}</h3>
                     <p>{desc}</p>
                     <Link href={`/products/${product}`}>
@@ -28,7 +28,5 @@ const FooterBanner = ( {footerBanner : {image, discount, largeText1, largeText2,
         </div>
     )
 }
-        {console.log(FooterBanner)}
-
 
 export default FooterBanner

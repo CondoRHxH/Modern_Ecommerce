@@ -47,8 +47,8 @@ export default async function Home() {
       <HeroBanner heroBanner={bannerData?.length && bannerData[0]} />
       
       <div className='products-heading'>
-        <h3>Best Selling Products</h3>
-        <p>One of the best speakers</p>
+        <h3>High-performance mechanical keyboards designed for ultimate typing and gaming</h3>
+        <p>Level up your setup with our premium mechanical keyboards.</p>
       </div>
 
       <div className='products-container'>
