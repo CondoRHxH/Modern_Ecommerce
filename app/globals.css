@@ -121,7 +121,14 @@ width: 100%;
 
 .product-name{
   font-weight: 500;
+  /* word-spacing: 1%; */
 }
+
+.Products-Images{
+  display: flex;
+  justify-content: space-between;
+}
+
 .product-price{
   font-weight: 800;
   margin-top: 6px;
