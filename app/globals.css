@@ -121,12 +121,15 @@ width: 100%;
 
 .product-name{
   font-weight: 500;
-  /* word-spacing: 1%; */
+  /* width: 90%; */
 }
 
 .Products-Images{
   display: flex;
-  justify-content: space-between;
+  /* grid-template-columns: auto; */
+  /* background-color: red; */
+  /* width: 25%; */
+  text-align: center;
 }
 
 .product-price{
