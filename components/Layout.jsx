@@ -12,7 +12,7 @@ const Layout = ( {children} ) => {
                 <title>Ecommerce Shop</title>
             </Head>
             <header>
-                <Navbar />
+                <Navbar anchorElNav={null}/>
             </header>
             <main className='main-container'>
                 {children}

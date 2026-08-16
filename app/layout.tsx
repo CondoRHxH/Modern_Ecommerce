@@ -36,6 +36,7 @@ export default function RootLayout({
             <Layout>
 
             {/* <Navba></Navba> */}
+          
           <Toaster />
           {children}
           </Layout>
