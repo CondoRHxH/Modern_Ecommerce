@@ -15,7 +15,7 @@ const HeroBanner = ( {heroBanner}) => {
                     <img src={urlFor(heroBanner.image)} alt="product" className="hero-banner-image" />
                     <div>
 
-                    <Link href={`/products/${heroBanner.product}`}>
+                    <Link href={`/products/apex-pro-wireless-rgb-mechanical-keyboard`}>
                         <button>{heroBanner.buttonText}</button>
                     </Link>
                     <div className='desc'>
