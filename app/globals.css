@@ -71,7 +71,7 @@ width: 100%;
 }
 .cart-icon{
   font-size: 25px;
-  color: gray;
+  color: black;
   cursor: pointer;
   position: relative;
   transition: transform .4s ease;
@@ -162,6 +162,11 @@ width: 100%;
   font-weight: 500;
   cursor: pointer;
   z-index:10000 !important;
+}
+
+.Navbar-Display{
+  margin-bottom: 30px;
+  /* border-radius: 10px0; */
 }
 
 .hero-banner-container h3{
@@ -645,9 +650,9 @@ margin-top: 160px;
     height: 560px;
   }
   .hero-banner-image{
-    width: 77%;
+    width: 55%;
     height: 62%;
-    top: -2%;
+    top: -1%;
     right: -6%;
   }
   .footer-banner-container{
@@ -655,25 +660,27 @@ margin-top: 160px;
     margin-top: 80px;
   }
   .footer-banner-image{
-    width: 77%;
-    left: 30%;
-    top: 10%;
+    width: 55%;
+    left: 28%;
+    top: 30%;
     height: 56%
   }
   .banner-desc .left h3{
     font-weight: 900;
-    font-size: 50px;
-    margin-left: 5px;
+    font-size: 45px;
+    margin-right: 10px;
     
   }
   .banner-desc .left p{
-    margin:18px;
+    margin-bottom:18px;
   }
   .banner-desc .right h3{
     font-size: 45px;
+    margin-left: 15px;
   }
   .banner-desc .right p{
     font-size: 18px;
+    margin-left: 15px;
   }
   .banner-desc .right .company-desc{
     font-size: 14px;
@@ -687,6 +694,158 @@ margin-top: 160px;
   }
   .hero-banner-container h1{
     font-size: 50px;
+    margin-left: 0;
+  }
+ .hero-banner-container h3{
+    font-size: 40px;
+  }
+  .hero-banner-container button{
+    margin-top: 90px;
+    z-index: 10000;
+  }
+  .desc{
+   bottom: 60px;
+  }
+  .product-detail-container{
+    flex-wrap: wrap;
+    }
+  .product-detail-container .product-detail-image{
+    width: 350px;
+    height: 350px;
+  }
+  .cart-container{
+    width: 415px;
+  padding: 4px;
+  }
+  .cart-heading{
+    margin-top: 35px;
+  }
+  .product-container{
+    margin-top: 10px;
+  }
+  .product{
+    padding: 20px 5px;
+
+  }
+  .product .cart-product-image{
+    width: 25%;
+    height: 25%;
+  }
+  .buttons .add-to-cart{
+    width: 150px;
+  }
+  .buttons .buy-now{
+    width: 150px;
+  }
+  .product-detail-container{
+    margin: 20px;
+  }
+
+.item-desc .flex{
+  width: 200px;
+}
+.top{
+  flex-wrap: wrap;
+  gap: 10px;
+
+
+}
+.item-desc .bottom{
+  margin-top: 30px;
+}
+.flex h5{
+  font-size: 16px;
+   color: #324d67;
+}
+.flex h4{
+  font-size: 16px;
+   color: black;
+}
+.cart-bottom{
+  padding: 30px;
+}
+
+.total h3{
+  font-size: 20px;
+}
+.track {
+  animation: marquee 10s linear infinite;
+  width: 550%;
+}
+.success-wrapper, .cancel-wrapper{
+ 
+  min-height: 69vh;
+}
+.success, .cancel {
+   width: 370px;
+  margin-top: 100px;
+  padding: 20px;
+}
+.success{
+  height: 350px;
+}
+.success h2{
+  font-size: 17px;
+}
+.btn-container{
+  width: 300px;
+  margin: auto;
+}
+}
+
+/* Tablette Size */
+
+
+@media screen and (max-width:1000px) {
+  .hero-banner-container{
+    height: 560px;
+  }
+  .hero-banner-image{
+    width: 50%;
+    height: 72%;
+    top: -1%;
+    left: 50%;
+  }
+  .footer-banner-container{
+    /* height: 560px; */
+    margin-top: 80px;
+  }
+  .footer-banner-image{
+    width: 40%;
+    left: 20%;
+    top: 30%;
+    height: 56%
+  }
+  .banner-desc .left h3{
+    font-weight: 900;
+    font-size: 45px;
+    margin-right: 10px;
+    
+  }
+  .banner-desc .left p{
+    margin-bottom:18px;
+  }
+  .banner-desc .right h3{
+    font-size: 45px;
+    margin-left: 15px;
+  }
+  .banner-desc .right p{
+    font-size: 18px;
+    margin-left: 15px;
+  }
+  .banner-desc .right .company-desc{
+    font-size: 14px;
+  }
+  /* .banner-desc{
+    flex-wrap: wrap;
+    gap: 20px;
+  } */
+  .hero-banner-container{
+    line-height: 1.3;
+  }
+  .hero-banner-container h1{
+    font-size: 50px;
+    margin-left: 0;
   }
  .hero-banner-container h3{
     font-size: 40px;

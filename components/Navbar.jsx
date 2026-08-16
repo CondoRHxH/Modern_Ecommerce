@@ -53,7 +53,7 @@ const Navbar = () =>{
     const data = useStateContext()
     console.log(data)
     return(
-        <div>
+        <div className='Navbar-Display'>
             {/* <div className='navbar-container'>
                 <p><Link href='/'>Store</Link></p>
                     
@@ -66,15 +66,17 @@ const Navbar = () =>{
 
                 {showCart && <Cart />}
             </div> */}
-            <AppBar position="static">
+            <AppBar position="static" 
+            sx={{backgroundColor:'#F02D34', color:'White',boxShadow: "none", borderRadius:'12px',width: '92%',mx:'auto'}}
+            >
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                    {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/"
                         sx={{
                         mr: 2,
                         display: { xs: 'none', md: 'flex' },
@@ -122,12 +124,12 @@ const Navbar = () =>{
                         ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                    {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
                     <Typography
                         variant="h5"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/"
                         sx={{
                         mr: 2,
                         display: { xs: 'flex', md: 'none' },
@@ -139,7 +141,7 @@ const Navbar = () =>{
                         textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        Store
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
@@ -165,28 +167,6 @@ const Navbar = () =>{
                             {showCart && <Cart />}
                         </IconButton>
                         </Tooltip>
-                        {/* <Menu
-                        sx={{ mt: '45px' }}
-                        id="menu-appbar"
-                        anchorEl={anchorElUser}
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        open={Boolean(anchorElUser)}
-                        onClose={handleCloseUserMenu}
-                        >
-                        {settings.map((setting) => (
-                            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                            <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-                            </MenuItem>
-                        ))}
-                        </Menu> */}
                     </Box>
                     </Toolbar>
                 </Container>
