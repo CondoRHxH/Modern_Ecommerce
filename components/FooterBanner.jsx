@@ -19,7 +19,7 @@ const FooterBanner = ( {footerBanner : {image, discount, largeText1, largeText2,
                     <p>{smallText}</p>
                     <h3>{midText}</h3>
                     <p>{desc}</p>
-                    <Link href={`/products/${product}`}>
+                    <Link href={`/products/apex-pro-wireless-rgb-mechanical-keyboard`}>
                         <button className=''>{buttonText}</button>
                     </Link>
                 </div>

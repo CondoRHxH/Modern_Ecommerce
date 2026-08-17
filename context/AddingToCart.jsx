@@ -13,7 +13,7 @@ export default function AddingToCart( {product} ){
     return(
         <>
         <button className='add-to-cart' onClick={() => onAdd(product, qty)}>Add To Cart</button>
-        <button className='buy-now'>Buy Now</button>
+        {/* <button className='buy-now'>Buy Now</button> */}
         </>
         
     )
