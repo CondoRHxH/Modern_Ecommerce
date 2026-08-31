@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern E-Commerce
+
+A modern and responsive e-commerce web application built with **Next.js**, **React**, **Sanity**, and **Stripe**.
+
+The project focuses on building a complete modern shopping experience, from browsing products and viewing product details to managing the cart and handling payments.
+
+🔗 **Live Demo:** https://modern-ecommerce-ten.vercel.app/
+
+---
+
+## Features
+
+* Shopping cart management
+* Product browsing and product details
+* Dynamic product pages
+* Content management with **Sanity CMS**
+* **Stripe** payment integration
+* Responsive design
+* Modern **Next.js App Router**
+* Clean and modern UI
+* Deployed with **Vercel**
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* **Next.js**
+* **React**
+* **JavaScript / TypeScript**
+* **CSS**
+
+### Content Management
+
+* **Sanity CMS**
+
+Sanity is used to manage and serve the product data used by the application.
+
+### Payments
+
+* **Stripe**
+
+Stripe is integrated to handle the payment flow.
+
+### Deployment
+
+* **Vercel**
+
+---
+
+## Project Structure
+
+```text
+Modern_Ecommerce/
+│
+├── app/                 # Next.js application routes and pages
+│
+├── components/          # Reusable React components
+│
+├── context/             # React Context and application state
+│
+├── lib/                 # Utility functions and integrations
+│
+├── public/               # Static assets
+│
+├── sanity/               # Sanity schemas and configuration
+│
+├── .sanity/              # Sanity generated/runtime files
+│
+├── sanity.config.js      # Sanity configuration
+├── sanity.cli.js         # Sanity CLI configuration
+│
+├── next.config.ts        # Next.js configuration
+├── package.json
+└── README.md
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/CondoRHxH/Modern_Ecommerce.git
+```
+
+### 2. Navigate to the project
+
+```bash
+cd Modern_Ecommerce
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env.local` file in the root directory and add the required environment variables for your **Sanity** and **Stripe** configuration.
+
+```env
+# Sanity
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=
+
+# Stripe
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+STRIPE_SECRET_KEY=
+```
+
+> Make sure to use your own credentials and never commit secret keys to GitHub.
+
+### 5. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The application is deployed on **Vercel** and is available here:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**https://modern-ecommerce-ten.vercel.app/**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you find this project interesting, feel free to explore the repository and give it a star.
