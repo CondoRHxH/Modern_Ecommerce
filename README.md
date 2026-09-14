@@ -1,6 +1,6 @@
 # Modern E-Commerce
 
-A modern and responsive e-commerce web application built with **Next.js**, **React**, **Sanity**, and **Stripe**.
+A modern and responsive E-commerce web application built with **Next.js**, **React**, **Sanity**, and **Stripe Integration**.
 
 The project focuses on building a complete modern shopping experience, from browsing products and viewing product details to managing the cart and handling payments.
 
