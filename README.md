@@ -114,7 +114,7 @@ STRIPE_SECRET_KEY=
 
 > Make sure to use your own credentials and never commit secret keys to GitHub.
 
-### 5. Start the development server
+### 5. Start the development server to start it
 
 ```bash
 npm run dev
