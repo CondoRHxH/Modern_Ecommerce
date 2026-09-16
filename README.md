@@ -100,7 +100,7 @@ npm install
 
 ### 4. Configure environment variables
 
-Create a `.env.local` file in the root directory and add the required environment variables for your **Sanity** and **Stripe** configuration also with some
+Create a `.env.local` file in the root directory and add the required environment variables for your **Sanity** and **Stripe** configuration.
 
 ```env
 # Sanity
