@@ -4,7 +4,7 @@ A modern and responsive E-commerce web application built with **Next.js**, **Rea
 
 The project focuses on building a complete modern shopping experience, from browsing products and viewing product details to managing the cart and handling payments.
 
-🔗 **Live Demo:** https://modern-ecommerce-ten.vercel.app/
+🔗 **Live Demo:** https://modern-ecommerce-ten.vercel.app
 
 ---
 
