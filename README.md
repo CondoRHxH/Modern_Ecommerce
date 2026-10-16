@@ -26,14 +26,14 @@ The project focuses on building a complete modern shopping experience, from brow
 
 ### Frontend
 
-* **Next.js**
-* **React**
-* **JavaScript / TypeScript**
-* **CSS**
+* **Next.js**.
+* **React**.
+* **JavaScript / TypeScript**.
+* **CSS**.
 
 ### Content Management
 
-* **Sanity CMS**
+* **Sanity CMS**.
 
 Sanity is used to manage and serve the product data used by the application.
 
