@@ -10,15 +10,15 @@ The project focuses on building a complete modern shopping experience, from brow
 
 ## Features
 
-* Shopping cart management
-* Product browsing and product details
-* Dynamic product pages
-* Content management with **Sanity CMS**
-* **Stripe** payment integration
-* Responsive design
-* Modern **Next.js App Router**
-* Clean and modern UI
-* Deployed with **Vercel**
+* Shopping cart management.
+* Product browsing and product details.
+* Dynamic product pages.
+* Content management with **Sanity CMS**.
+* **Stripe** payment integration.
+* Responsive design.
+* Modern **Next.js App Router**.
+* Clean and modern UI.
+* Deployed with **Vercel**.
 
 ---
 
