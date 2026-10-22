@@ -39,13 +39,13 @@ Sanity is used to manage and serve the product data used by the application.
 
 ### Payments
 
-* **Stripe**
+* **Stripe**.
 
 Stripe is integrated to handle the payment flow.
 
 ### Deployment
 
-* **Vercel**
+* **Vercel**.
 
 ---
 
