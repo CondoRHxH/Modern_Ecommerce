@@ -80,25 +80,25 @@ Modern_Ecommerce/
 
 ## Getting Started
 
-### 1. Clone the repository
+### 1. Clone the repository.
 
 ```bash
 git clone https://github.com/CondoRHxH/Modern_Ecommerce.git
 ```
 
-### 2. Navigate to the project
+### 2. Navigate to the project.
 
 ```bash
 cd Modern_Ecommerce
 ```
 
-### 3. Install dependencies
+### 3. Install dependencies.
 
 ```bash
 npm install
 ```
 
-### 4. Configure environment variables
+### 4. Configure environment variables.
 
 Create a `.env.local` file in the root directory and add the required environment variables for your **Sanity** and **Stripe** configuration.
 
@@ -114,7 +114,7 @@ STRIPE_SECRET_KEY=
 
 > Make sure to use your own credentials and never commit secret keys to GitHub.
 
-### 5. Start the development server to start it
+### 5. Start the development server to start it.
 
 ```bash
 npm run dev
