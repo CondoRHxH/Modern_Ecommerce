@@ -62,16 +62,16 @@ Modern_Ecommerce/
 │
 ├── lib/                 # Utility functions and integrations
 │
-├── public/               # Static assets
+├── public/              # Static assets
 │
-├── sanity/               # Sanity schemas and configuration
+├── sanity/              # Sanity schemas and configuration
 │
-├── .sanity/              # Sanity generated/runtime files
+├── .sanity/             # Sanity generated/runtime files
 │
-├── sanity.config.js      # Sanity configuration
-├── sanity.cli.js         # Sanity CLI configuration
+├── sanity.config.js     # Sanity configuration
+├── sanity.cli.js        # Sanity CLI configuration
 │
-├── next.config.ts        # Next.js configuration
+├── next.config.ts       # Next.js configuration
 ├── package.json
 └── README.md
 ```
