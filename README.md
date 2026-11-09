@@ -69,7 +69,6 @@ Modern_Ecommerce/
 │
 ├── sanity/              # Sanity schemas and configuration
 │
-├── .sanity/             # Sanity generated/runtime files
 │
 ├── sanity.config.js     # Sanity configuration
 ├── sanity.cli.js        # Sanity CLI configuration
