@@ -54,12 +54,14 @@ Stripe is integrated to handle the payment flow.
 ```text
 Modern_Ecommerce/
 │
-├── .sanity/runtime       # Sanity RunTime            
-├──  app/                 # Next.js application routes and pages
+├── .sanity/runtime      # Sanity RunTime            
+├──  app/                # Next.js application routes and pages
 │
 ├── components/          # Reusable React components
 │
 ├── context/             # React Context and application state
+│
+├── dist/   
 │
 ├── lib/                 # Utility functions and integrations
 │
