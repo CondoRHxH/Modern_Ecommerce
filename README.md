@@ -73,6 +73,8 @@ Modern_Ecommerce/
 ├── sanity.config.js     # Sanity configuration
 ├── sanity.cli.js        # Sanity CLI configuration
 │
+├── .npmrc
+│
 ├── next.config.ts       # Next.js configuration
 ├── package.json
 └── README.md
