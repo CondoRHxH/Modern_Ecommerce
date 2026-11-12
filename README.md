@@ -61,7 +61,7 @@ Modern_Ecommerce/
 │
 ├── context/             # React Context and application state
 │
-├── dist/   
+├── dist/                # Images, and multiple SVG's
 │
 ├── lib/                 # Utility functions and integrations
 │
